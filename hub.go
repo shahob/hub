@@ -1,12 +1,12 @@
 package main
 
 import (
-	"net/http"
 	"flag"
+	"net/http"
 
-	"github.com/shahobik/config"
 	"github.com/gin-gonic/gin"
 	"github.com/go-pg/pg"
+	"github.com/shahob/config"
 )
 
 func main() {
