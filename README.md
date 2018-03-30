@@ -15,4 +15,4 @@ The following dependencies are used in this project
 
 ## License
 
-HUB is licensed under the MIT license. Check the [LICENSE](LICENSE.md) file for details.
+HUB is licensed under the MIT license. Check the [LICENSE](LICENSE) file for details.
