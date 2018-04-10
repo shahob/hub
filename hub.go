@@ -169,6 +169,7 @@ func TrelloCardUpdate(payload *GitlabPayload, conf *Config, hub *Hub, TrelloId c
 
 func main() {
 	configPath := flag.String("c", "config.json", "Configuration file path")
+	port := flag.String("p", ":8080", "listen and serve port")
 	mode := flag.String("mode", "debug", "Mode")
 	flag.Parse()
 
@@ -245,5 +246,5 @@ func main() {
 		})
 	})
 
-	router.Run()
+	router.Run(*port)
 }
