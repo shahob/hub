@@ -52,10 +52,10 @@ type Hub struct {
 
 type TrelloPayload struct {
 	Action struct {
-		Type    string `json:"type"`
+		Type string `json:"type"`
 		Display struct {
 			TranslationKey string `json:"translationKey"`
-			Entities       struct {
+			Entities struct {
 				Card struct {
 					Text string `json:"text"`
 					Id   string `json:"id"`
@@ -169,7 +169,7 @@ func TrelloCardUpdate(payload *GitlabPayload, conf *Config, hub *Hub, TrelloId c
 
 func main() {
 	configPath := flag.String("c", "config.json", "Configuration file path")
-	port := flag.String("p", ":8080", "listen and serve port")
+	port := flag.String("p", "8080", "listen and serve port")
 	mode := flag.String("mode", "debug", "Mode")
 	flag.Parse()
 
@@ -246,5 +246,7 @@ func main() {
 		})
 	})
 
-	router.Run(*port)
+	// TODO
+	serverPort := ":" + *port
+	router.Run(serverPort)
 }
