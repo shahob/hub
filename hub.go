@@ -123,7 +123,7 @@ func SaveIds(payload *TrelloPayload, hubCollection *mgo.Collection, GitlabId cha
 // Set status
 func SaveStatus(hubCollection *mgo.Collection, TrelloId chan string) {
 	tid := <-TrelloId
-	err := hubCollection.Update(bson.M{"trelloid": tid}, bson.M{"$set": bson.M{"status": "closed"}})
+	err := hubCollection.Update(bson.M{"trelloid": tid}, bson.M{"$set": bson.M{"state": "closed"}})
 	if err != nil {
 		log.Fatal(err)
 	}
